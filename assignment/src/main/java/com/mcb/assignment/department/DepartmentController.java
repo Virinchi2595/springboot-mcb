@@ -26,8 +26,7 @@ public class DepartmentController {
 
   @PostMapping(
       value = "",
-      produces = MediaType.APPLICATION_JSON_VALUE,
-      consumes = MediaType.APPLICATION_JSON_VALUE)
+      produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<Department> createDepartment(@Valid @RequestBody Department Department) {
     return new ResponseEntity<>(departmentService.createDepartment(Department), HttpStatus.CREATED);
   }
