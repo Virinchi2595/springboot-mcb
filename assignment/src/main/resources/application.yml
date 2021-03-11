@@ -1,0 +1,31 @@
+
+- name: Google Java Format
+  uses: axel-op/googlejavaformat-action@v3.4.0
+
+
+auth:
+    expiryInMs: 600000
+    password: 'password'
+    secret: 'jwtsecret'
+    username: 'test'
+server:
+    servlet:
+        context-path: /api
+spring:
+    datasource:
+        driverClassName: org.h2.Driver
+        password: password
+        url: jdbc:h2:mem:testdb
+        username: sa
+    h2:
+        console:
+            enabled: true
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.H2Dialect
+        show-sql: true
+
