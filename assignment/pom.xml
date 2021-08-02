@@ -15,6 +15,10 @@
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>
+  <sonar.projectKey>Virinchi2595_springboot-mcb</sonar.projectKey>
+  <sonar.organization>virinchi2595</sonar.organization>
+  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+
     </properties>
     <dependencies>
         <dependency>
@@ -25,6 +29,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
+             
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
