@@ -16,3 +16,5 @@ Bearer "jwt token"
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Virinchi2595_springboot-mcb&metric=ncloc)](https://sonarcloud.io/dashboard?id=Virinchi2595_springboot-mcb)
 
 
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Virinchi2595_springboot-mcb&metric=code_smells)](https://sonarcloud.io/dashboard?id=Virinchi2595_springboot-mcb)
+
