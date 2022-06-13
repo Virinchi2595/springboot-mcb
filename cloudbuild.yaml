@@ -6,7 +6,7 @@ steps:
   - name: maven:3-jdk-11
     dir: assignment
     entrypoint: mvn
-    args: ['DEBUG = snyk:test','-Dmaven.test.skip=true']
+    args: ['snyk:test -d','-Dmaven.test.skip=true']
 
 
 #  - name: snyk/snyk-cli:npm
