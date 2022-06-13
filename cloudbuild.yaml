@@ -3,50 +3,56 @@ substitutions:
 
 steps:
 
-  - name: snyk/snyk-cli:npm
+  - name: maven:3-jdk-11
     dir: assignment
-    args:
-      - '-c'
-      - |-
-        snyk config set api=${_SNYK_TOKEN}
-        snyk monitor --org=56427f3f-39fe-46b3-84d9-dc9f512e2b7c  || true
-    id: Snyk Open Source Test
-    entrypoint: bash
-  - name: snyk/snyk-cli:npm
-    args:
-      - '-c'
-      - |-
-        snyk config set api=${_SNYK_TOKEN}
-        snyk code test  || true
-    id: Snyk Code Test
-    entrypoint: bash
+    entrypoint: mvn
+    args: ['synk:test','-Dmaven.test.skip=true']
+
+
 #  - name: snyk/snyk-cli:npm
+#    dir: assignment
 #    args:
 #      - '-c'
 #      - |-
 #        snyk config set api=${_SNYK_TOKEN}
-#        snyk container test --severity-threshold=medium jiajunngjj/docker-goof:latest
-#    id: Snyk Container Test
+#        snyk monitor --org=56427f3f-39fe-46b3-84d9-dc9f512e2b7c  || true
+#    id: Snyk Open Source Test
 #    entrypoint: bash
 #  - name: snyk/snyk-cli:npm
 #    args:
 #      - '-c'
 #      - |-
 #        snyk config set api=${_SNYK_TOKEN}
-#        snyk iac test --severity-threshold=medium main.tf || true
-#    id: Snyk IaC Test
+#        snyk code test  || true
+#    id: Snyk Code Test
 #    entrypoint: bash
-  - name: snyk/snyk-cli:npm
-    args:
-      - '-c'
-      - |-
-        snyk config set api=${_SNYK_TOKEN}
-        set -o pipefail
-        snyk test --severity-threshold=medium --json | snyk-to-html -o results.html || true
-    id: Create HTML artifact
-    entrypoint: bash
-artifacts:
-  objects:
-    location: 'gs://kafka-data-tbh/scan_output'
-    paths:
-      - results.html
+##  - name: snyk/snyk-cli:npm
+##    args:
+##      - '-c'
+##      - |-
+##        snyk config set api=${_SNYK_TOKEN}
+##        snyk container test --severity-threshold=medium jiajunngjj/docker-goof:latest
+##    id: Snyk Container Test
+##    entrypoint: bash
+##  - name: snyk/snyk-cli:npm
+##    args:
+##      - '-c'
+##      - |-
+##        snyk config set api=${_SNYK_TOKEN}
+##        snyk iac test --severity-threshold=medium main.tf || true
+##    id: Snyk IaC Test
+##    entrypoint: bash
+#  - name: snyk/snyk-cli:npm
+#    args:
+#      - '-c'
+#      - |-
+#        snyk config set api=${_SNYK_TOKEN}
+#        set -o pipefail
+#        snyk test --severity-threshold=medium --json | snyk-to-html -o results.html || true
+#    id: Create HTML artifact
+#    entrypoint: bash
+#artifacts:
+#  objects:
+#    location: 'gs://kafka-data-tbh/scan_output'
+#    paths:
+#      - results.html
