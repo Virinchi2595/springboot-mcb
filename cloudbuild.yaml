@@ -4,12 +4,11 @@ substitutions:
 steps:
 
   - name: snyk/snyk-cli:npm
-    dir: assignment
     args:
       - '-c'
       - |-
         snyk config set api=${_SNYK_TOKEN}
-        snyk test  || true
+        snyk test --all-projects || true
     id: Snyk Open Source Test
     entrypoint: bash
   - name: snyk/snyk-cli:npm
