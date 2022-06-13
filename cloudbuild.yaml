@@ -34,15 +34,15 @@ steps:
 #        snyk iac test --severity-threshold=medium main.tf || true
 #    id: Snyk IaC Test
 #    entrypoint: bash
-#  - name: snyk/snyk-cli:npm
-#    args:
-#      - '-c'
-#      - |-
-#        snyk config set api=${_SNYK_TOKEN}
-#        set -o pipefail
-#        snyk test --severity-threshold=medium --json | snyk-to-html -o results.html || true
-#    id: Create HTML artifact
-#    entrypoint: bash
+  - name: snyk/snyk-cli:npm
+    args:
+      - '-c'
+      - |-
+        snyk config set api=${_SNYK_TOKEN}
+        set -o pipefail
+        snyk test --severity-threshold=medium --json | snyk-to-html -o results.html || true
+    id: Create HTML artifact
+    entrypoint: bash
 artifacts:
   objects:
     location: 'gs://kafka-data-tbh/scan_output'
