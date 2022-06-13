@@ -7,7 +7,7 @@ steps:
       - '-c'
       - |-
         snyk config set api=${_SNYK_TOKEN}
-        snyk test --severity-threshold=medium || true
+        snyk test  || true
     id: Snyk Open Source Test
     entrypoint: bash
   - name: snyk/snyk-cli:npm
@@ -15,7 +15,7 @@ steps:
       - '-c'
       - |-
         snyk config set api=${_SNYK_TOKEN}
-        snyk code test --severity-threshold=medium || true
+        snyk code test  || true
     id: Snyk Code Test
     entrypoint: bash
 #  - name: snyk/snyk-cli:npm
