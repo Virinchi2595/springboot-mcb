@@ -4,6 +4,7 @@ substitutions:
 steps:
 
   - name: snyk/snyk-cli:npm
+    dir: assignment
     args:
       - '-c'
       - |-
