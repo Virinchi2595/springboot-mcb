@@ -6,7 +6,8 @@ steps:
   - name: maven:3-jdk-11
     dir: assignment
     entrypoint: mvn
-    args: ['install','-X']
+    args: ['install']
+    timeout: 900s
 
 
 #  - name: snyk/snyk-cli:npm
