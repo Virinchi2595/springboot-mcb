@@ -8,7 +8,7 @@ steps:
       - '-c'
       - |-
         snyk config set api=${_SNYK_TOKEN}
-        snyk test --file= /assignment/pom.xml || true
+        snyk test --org=56427f3f-39fe-46b3-84d9-dc9f512e2b7c  || true
     id: Snyk Open Source Test
     entrypoint: bash
   - name: snyk/snyk-cli:npm
