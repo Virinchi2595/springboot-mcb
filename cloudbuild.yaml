@@ -2,7 +2,9 @@ substitutions:
   _SNYK_TOKEN : c34f36c9-6d8d-4d63-ac61-83d8c24defc4
 
 steps:
+
   - name: snyk/snyk-cli:npm
+    dir: assignment
     args:
       - '-c'
       - |-
