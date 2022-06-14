@@ -9,7 +9,6 @@ steps:
 #    args: ['snyk:monitor']
 #    timeout: 900s
 
-
   - name: snyk/snyk-cli:npm
     dir: assignment
     args:
